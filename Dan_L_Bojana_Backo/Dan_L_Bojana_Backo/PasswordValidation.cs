@@ -21,7 +21,7 @@ namespace Dan_L_Bojana_Backo
             int length = password.Length;
 
             // check the entered password
-            foreach  (char enteredCharacter in characters)
+            foreach (char enteredCharacter in characters)
             {
                 if (char.IsUpper(enteredCharacter))
                 {
