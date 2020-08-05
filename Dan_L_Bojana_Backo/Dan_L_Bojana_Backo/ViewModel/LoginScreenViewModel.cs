@@ -87,7 +87,7 @@ namespace Dan_L_Bojana_Backo.ViewModel
                 
                 if (!string.IsNullOrEmpty(UserName) && passwordValidation.PasswordOk(password))
                 {
-                    var hash = SecurePasswordHasher.Hash(password);
+                    string hash = SecurePasswordHasher.Hash(password);
                     User.Username = UserName;
                     User.Password = hash;
                     service.AddUser(User);

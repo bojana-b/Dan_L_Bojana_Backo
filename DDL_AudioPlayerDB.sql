@@ -10,7 +10,7 @@ IF OBJECT_ID('tblUser', 'U') IS NOT NULL DROP TABLE tblUser;
 CREATE TABLE tblUser (
     UserID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
     Username nvarchar(50) NOT NULL,
-	Password nvarchar(150) NOT NULL,
+	Password nvarchar(500) NOT NULL,
 );
 
 CREATE TABLE tblSong (
