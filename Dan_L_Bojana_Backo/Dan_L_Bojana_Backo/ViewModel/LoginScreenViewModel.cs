@@ -10,6 +10,7 @@ namespace Dan_L_Bojana_Backo.ViewModel
     class LoginScreenViewModel : ViewModelBase
     {
         LoginScreen loginScreen;
+        PasswordValidation passwordValidation = new PasswordValidation();
 
         public LoginScreenViewModel(LoginScreen loginScreenOpen)
         {
@@ -65,7 +66,7 @@ namespace Dan_L_Bojana_Backo.ViewModel
             {
                 string password = (obj as PasswordBox).Password;
                 
-                if (UserName.Equals("Zaposleni") && password.Equals("Zaposleni"))
+                if (UserName.Equals("Zaposleni") && passwordValidation.PasswordOk(password))
                 {
                     MainWindow employeeView = new MainWindow();
                     loginScreen.Close();
@@ -73,7 +74,7 @@ namespace Dan_L_Bojana_Backo.ViewModel
                 }
                 else
                 {
-                    MessageBox.Show("Wrong usename or password");
+                    MessageBox.Show("Wrong usename or password! You must have at least 6 characters with 2 uppercase letters! ");
                 }
 
             }
